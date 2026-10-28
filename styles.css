@@ -1,0 +1,25 @@
+body {
+    background:#335577;
+    margin:0;
+    text-align:center;
+    line-height: 1.5;
+    font: medium Arial;
+    color:#ffffff;
+    font-size: medium;
+    }
+
+h1 {
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+}
+
+button{
+    color: #black;
+}
+
+div {
+    display:inline-block;
+}

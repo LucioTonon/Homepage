@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Homepage - Lucio Tonon</title>
+    </head>
+
+    <body>
+        <p></p>
+        <h2>Lucio Mauro Micheletti Tonon</h2>
+        <p><q>God gives everyone a star. Some make the star a sun. Others can't even see it.</q>  (Helena Kolody)</p>
+
+        <div>
+        <form action="/quotes.html">
+            <button type="submit" class="btn btn-primary">Citations</button>
+        </form></div>
+
+        <div>
+        <form action="/resume.html">
+            <button type="submit" class="btn btn-primary">Curriculum</button>
+        </form></div>
+
+        <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="button" onclick="local()">Location</button>
+        </div>
+
+        <script>
+        function    local() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+            let text = "Lat: " + position.coords.latitude + "   Long: " + position.coords.longitude;
+            document.getElementById("demo").innerHTML = text;           });
+        }
+        </script>
+
+        <p id="demo"></p>
+
+        <h4 class="w3-center" id="demo1">Mountains that I climbed</h4>
+        <div class="w3-content w3-display-container" align="center">
+          <img class="mySlides" src="Lucio_Jalapao.jpg" style="width:50%" onmousemove=jalapao1()>
+          <img class="mySlides" src="Jalapao.jpg" style="width:50%" onmousemove=jalapao2()>
+          <img class="mySlides" src="Marumbi.jpg" style="width:50%" onmousemove=marumbi()>
+          <img class="mySlides" src="Pico_Parana.jpg" style="width:50%" onmousemove=pp()>
+          <img class="mySlides" src="Itapiroca.jpg" style="width:50%" onmousemove=itapiroca()>
+          <img class="mySlides" src="Tucum.jpg" style="width:50%" onmousemove=tucum()>
+          <img class="mySlides" src="Morro_Coroa.jpg" style="width:50%" onmousemove=coroa()>
+
+          <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="w3-button w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <a href="mailto:luciotonon@yahoo.com.br">Lucio Mauro Micheletti Tonon</a>
+
+        <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          x[slideIndex-1].style.display = "block";
+        }
+
+        function jalapao1() {
+            document.getElementById("demo1").innerHTML = "Lucio in Jalapao";
+        }
+        function jalapao2() {
+            document.getElementById("demo1").innerHTML = "Jalapao - Tocantins - Brazil";
+        }
+        function marumbi() {
+            document.getElementById("demo1").innerHTML = "Pico Marumbi - Parana - Brazil";
+        }
+        function pp() {
+            document.getElementById("demo1").innerHTML = "Pico Parana - Brazil";
+        }
+        function itapiroca() {
+            document.getElementById("demo1").innerHTML = "Itapiroca - Parana - Brazil";
+        }
+        function tucum() {
+            document.getElementById("demo1").innerHTML = "Tucum - Parana - Brazil";
+        }
+        function coroa() {
+            document.getElementById("demo1").innerHTML = "Morro da Coroa - Florianopolis - Brazil";
+        }
+        </script>
+
+<!--
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control-lg" id="exampleFormControlInput1" placeholder="E-mail">
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control-lg" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
+            </div>
+        <button type="submit" class="btn btn-primary" href="mailto:luciotonon@yahoo.com.br">Send</button>
+        </form>
+    -->
+    </body>
+</html>
